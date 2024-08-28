@@ -75,7 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 08/28
 - Created a new react app using npm create-create-app Project_name
 - Tailwind setup for CSS
-
+- Header
+- Login form
 
 
 #Features
