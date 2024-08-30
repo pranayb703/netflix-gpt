@@ -1,6 +1,11 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidata } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
@@ -10,8 +15,49 @@ const Login = () => {
   const name = useRef(null);
   //This is form submit function
   const handleButtonClick = () => {
-    const isValid = checkValidata(email.current.value, password.current.value);
-    setErrorMessage(isValid);
+    const errorMessage = checkValidata(
+      email.current.value,
+      password.current.value
+    );
+    setErrorMessage(errorMessage);
+    if (errorMessage) return;
+    //Here you can call your API to login
+    if (!isSignInForm) {
+      //Sign Up logic
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("🚀 ~ .then ~ user:", user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + " : " + errorMessage);
+        });
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log("🚀 ~ .then ~ user:", user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + " : " + errorMessage);
+        });
+    }
   };
   //This is to toggle whether sign in or sign up form
   const toggleSignInForm = () => {
