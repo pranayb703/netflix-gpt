@@ -69,28 +69,66 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+Firebase info :
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+apiKey: "AIzaSyAbNeR4310hY2sMQBkSNzsiWmqRAk1zhWk",
+authDomain: "netflixgpt-70ef8.firebaseapp.com",
+projectId: "netflixgpt-70ef8",
+storageBucket: "netflixgpt-70ef8.appspot.com",
+messagingSenderId: "66576669953",
+appId: "1:66576669953:web:be0d05b6f7d32d9c31cf00",
+measurementId: "G-8H8VDW7FGZ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+#FIREBASE
+#-----------------------------------------------------
+#During setup I got an error for Firebase setting up for authentication, that "Error Updating Email/Username" -> Resolved by disabling the CORS extension
+firebase login
+firebase init
+
+"site": "netflixgpt-70ef8-e897d",
+
+firebase deploy --only hosting:netflixgpt-70ef8-e897d
+#######################################################
 #Project things we did
 
 08/28
+
 - Created a new react app using npm create-create-app Project_name
 - Tailwind setup for CSS
 - Header
 - Login form
-
+- Sign up form
+- Routing
+- Form validation
+- useRef Hook
 
 #Features
-- Login/SignUp 
-    - Sign in / Sign up Form
-    - redirect to browse page
+
+- Login/SignUp
+  - Sign in / Sign up Form
+  - redirect to browse page
 - Browse (After authentication)
-    - Header
-    - Main movie 
-        - Trailer in background
-        - Movie Title
-        - Movie Description
-    - Movies Suggestions
-        - Movie Title * n (rows)
-- Netflix GPT 
-    - Search bar
-    - Movie Suggestions
+  - Header
+  - Main movie
+    - Trailer in background
+    - Movie Title
+    - Movie Description
+  - Movies Suggestions
+    - Movie Title \* n (rows)
+- Netflix GPT
+  - Search bar
+  - Movie Suggestions
