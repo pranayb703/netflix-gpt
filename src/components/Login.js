@@ -7,9 +7,10 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND } from "../utils/constants";
+import { USER_URL } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
@@ -41,8 +42,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/12727041?s=96&v=4",
+            photoURL: USER_URL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth;
@@ -60,7 +60,6 @@ const Login = () => {
               // An error occurred
               // ...
             });
-          console.log("🚀 ~ .then ~ user:", user);
 
           // ...
         })
@@ -78,7 +77,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("🚀 ~ .then ~ user:", user);
           //navigate("/browse");
           // ...
         })
@@ -97,10 +95,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/1d29f9a4-1900-43dc-a420-99044f734ee2/4fa8749c-7f54-489a-9b60-aa399ccc96ca/US-en-20240826-POP_SIGNUP_TWO_WEEKS-perspective_WEB_0a3be455-b400-40a6-b0a8-1557bb4503dd_medium.jpg"
-          alt="Netlix background"
-        ></img>
+        <img src={BACKGROUND} alt="Netlix background"></img>
       </div>
       <form
         className="text-white w-3/12 absolute p-12 bg-black m-auto my-36 right-0 left-0 bg-opacity-80"

@@ -69,6 +69,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+## TMDB API START
+
+## API KEY
+
+9160bcf1021e3bcd19bf4b1c6a7d4185
+
+## API read access token
+
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MTYwYmNmMTAyMWUzYmNkMTliZjRiMWM2YTdkNDE4NSIsIm5iZiI6MTcyNTM5MDg0Ny43NjQ1MjUsInN1YiI6IjY2ZDc1ZjVkZmNiNzVkNGU1MTU2NjAxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iUiDs8j4sPsDMtE0C-5-XdjB4h9YWs6bOCaaz6w_4WQ
+
+## TMDB API END
+
 Firebase info :
 
 // Import the functions you need from the SDKs you need
@@ -122,6 +134,20 @@ firebase deploy --only hosting:netflixgpt-70ef8-e897d
 - Creating/Implementing Sign up account
 - Creating/Implementing Login account
 - Creating Redux Store with user slice
+- Bugfix : Sign up user displayName on the login page
+- Bugfix : Sign in / sign out logic and also redirect user to login page if user tries to directly access /browse page
+- Unsubscribed to the onAuthStateChanged callback
+- Add hardcoded files to constants page
+- Create TMDB account to access movies API
+- Register TMDB API and get the list of movie using TMDB API
+- Custom hook for now Playing movies
+- updated store with movies data basically a movies slice
+- Planing for main and secondary container
+- Fetch data for trailer videos
+- Update store with trailer video data
+- Embeded youtube video and made it autoplay and mute
+- Custom hook for movie trailers
+- Fixed css for trailer videos in background
 
 #Features
 
