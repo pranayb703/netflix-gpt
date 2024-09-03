@@ -115,6 +115,13 @@ firebase deploy --only hosting:netflixgpt-70ef8-e897d
 - Routing
 - Form validation
 - useRef Hook
+- Firebase setup
+- Firebase Authentication
+- Deploying app on Firebae
+- Firebase Hosting
+- Creating/Implementing Sign up account
+- Creating/Implementing Login account
+- Creating Redux Store with user slice
 
 #Features
 
