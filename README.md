@@ -148,6 +148,8 @@ firebase deploy --only hosting:netflixgpt-70ef8-e897d
 - Embeded youtube video and made it autoplay and mute
 - Custom hook for movie trailers
 - Fixed css for trailer videos in background
+- Build the secondary container with movie list
+- Custom hook for popular, upcoming movies
 
 #Features
 
