@@ -150,6 +150,7 @@ firebase deploy --only hosting:netflixgpt-70ef8-e897d
 - Fixed css for trailer videos in background
 - Build the secondary container with movie list
 - Custom hook for popular, upcoming movies
+- GPT Search feature
 
 #Features
 
